@@ -3,7 +3,7 @@ import { Image, Text, View } from "react-native";
 
 import { styles } from "./styles";
 
-export function LogoScreen() {
+export function SplashScreen() {
   return (
     <View style={styles.container}>
       <Image
