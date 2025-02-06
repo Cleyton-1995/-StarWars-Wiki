@@ -6,7 +6,7 @@ import {
   Outfit_700Bold,
 } from "@expo-google-fonts/outfit";
 import { Text, View, ActivityIndicator } from "react-native";
-import { Home } from "./src/screens/Home";
+import { SplashScreen } from "./src/screens/SplashScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -31,7 +31,7 @@ export default function App() {
         screenOptions={{ headerShown: false }}
         initialRouteName="Home"
       >
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Home" component={SplashScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
