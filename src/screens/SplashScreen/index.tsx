@@ -2,16 +2,15 @@ import React from "react";
 import { Image, Text, View } from "react-native";
 
 import { styles } from "./styles";
+import { CustomText } from "../../components/atoms/Text";
+import { Logo } from "../../components/atoms/Logo";
 
 export function SplashScreen() {
   return (
     <View style={styles.container}>
-      <Image
-        style={styles.logo}
-        source={require("../../assets/logo.png")}
-      />
+      <Logo style={styles.logo} />
 
-      <Text style={styles.title}> StarWars-Wiki</Text>
+      <CustomText label=" StarWars-Wiki" />
     </View>
   );
 }

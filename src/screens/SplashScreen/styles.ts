@@ -12,10 +12,4 @@ export const styles = StyleSheet.create({
     height: 64,
     width: 64,
   },
-  title: {
-    color: "#FFFFFF",
-    fontSize: 24,
-    fontWeight: "bold",
-    marginTop: 12,
-  },
 });
