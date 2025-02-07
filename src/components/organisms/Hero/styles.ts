@@ -8,6 +8,7 @@ export const styles = StyleSheet.create({
     flexDirection: "column",
     width: "100%",
     height: theme.metrics.px(460),
+    marginBottom: theme.metrics.px(20),
   },
 
   ImageBackground: {
@@ -43,8 +44,43 @@ export const styles = StyleSheet.create({
   },
 
   tag: {
-   height: theme.metrics.px(24),
-   paddingHorizontal: theme.metrics.px(4),
-   marginTop: theme.metrics.px(214),
+    height: theme.metrics.px(24),
+    paddingHorizontal: theme.metrics.px(4),
+    marginTop: theme.metrics.px(214),
+  },
+
+  buttonContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginTop: theme.metrics.px(10),
+  },
+
+  buttonAdd: {
+    color: theme.colors.white,
+    fontSize: theme.metrics.px(20),
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  buttonPlay: {
+    display: "flex",
+    color: theme.colors.red,
+    fontSize: theme.metrics.px(20),
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
+    backgroundColor: theme.colors.white,
+    paddingHorizontal: theme.metrics.px(10),
+    paddingVertical: theme.metrics.px(8),
+    borderRadius: theme.metrics.px(8),
+    gap: theme.metrics.px(2),
+  },
+
+  buttonInfo: {
+    color: theme.colors.white,
+    fontSize: theme.metrics.px(20),
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
