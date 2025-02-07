@@ -9,8 +9,7 @@ export function SplashScreen() {
   return (
     <View style={styles.container}>
       <Logo style={styles.logo} />
-
-      <CustomText label=" StarWars-Wiki" />
+      <CustomText style={styles.title} label=" StarWars-Wiki" />
     </View>
   );
 }
