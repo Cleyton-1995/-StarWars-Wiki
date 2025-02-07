@@ -6,6 +6,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { colors } from "../../../themes/colors";
 import { Logo } from "../../atoms/Logo";
 import { CustomText } from "../../atoms/Text";
+import { Tag } from "../../molecules/Tag";
 
 export function Hero() {
   return (
@@ -21,8 +22,12 @@ export function Hero() {
           colors={[colors.dark, "transparent", colors.dark]}
         >
           <Logo style={styles.logo} />
+          
+          <Tag label="Filme" style={styles.tag} />
+          
           <CustomText style={styles.labelTitle} label="Epsódio I" />
-          <CustomText style={styles.labelSubtitle} label="Ameaça Fantasma" />
+          
+          <CustomText style={styles.labelSubtitle} label="A Ameaça Fantasma" />
         </LinearGradient>
       </ImageBackground>
     </View>

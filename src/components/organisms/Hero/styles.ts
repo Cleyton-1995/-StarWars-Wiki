@@ -34,11 +34,17 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.bold,
     fontWeight: "bold",
     fontSize: theme.metrics.px(28),
-    marginTop: theme.metrics.px(214),
+    marginTop: theme.metrics.px(8),
   },
 
   labelSubtitle: {
     color: theme.colors.white,
     fontSize: theme.metrics.px(18),
+  },
+
+  tag: {
+   height: theme.metrics.px(24),
+   paddingHorizontal: theme.metrics.px(4),
+   marginTop: theme.metrics.px(214),
   },
 });
