@@ -1,4 +1,4 @@
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, ThemeProvider } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import {
   useFonts,
@@ -8,14 +8,14 @@ import {
 } from "@expo-google-fonts/source-sans-pro";
 import { Text, View, ActivityIndicator } from "react-native";
 import { SplashScreen } from "./src/screens/SplashScreen";
+import { theme } from "./src/themes";
 
 const Stack = createNativeStackNavigator();
-
 export default function App() {
   let [fontsLoaded] = useFonts({
     SourceSansPro_400Regular,
     SourceSansPro_600SemiBold,
-    SourceSansPro_700Bold
+    SourceSansPro_700Bold,
   });
 
   if (!fontsLoaded) {
@@ -28,13 +28,13 @@ export default function App() {
   }
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{ headerShown: false }}
-        initialRouteName="Home"
-      >
-        <Stack.Screen name="Home" component={SplashScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+      <NavigationContainer theme={theme}>
+        <Stack.Navigator
+          screenOptions={{ headerShown: false }}
+          initialRouteName="Home"
+        >
+          <Stack.Screen name="Home" component={SplashScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
   );
 }
