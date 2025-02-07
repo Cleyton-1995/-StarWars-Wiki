@@ -6,11 +6,12 @@ import {
   SourceSansPro_600SemiBold,
   SourceSansPro_700Bold,
 } from "@expo-google-fonts/source-sans-pro";
-import { Text, View, ActivityIndicator } from "react-native";
+import { View, ActivityIndicator, StatusBar } from "react-native";
 import { SplashScreen } from "./src/screens/SplashScreen";
 import { theme } from "./src/themes";
 import { ThemeProvider } from "styled-components";
 import { HomeScreen } from "./src/screens/HomeScreen";
+import { getStatusBarHeight } from "react-native-iphone-x-helper";
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -29,16 +30,25 @@ export default function App() {
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <NavigationContainer>
-        <Stack.Navigator
-          screenOptions={{ headerShown: false }}
-          initialRouteName="SplashScreen"
-        >
-          <Stack.Screen name="SplashScreen" component={SplashScreen} />
-          <Stack.Screen name="HomeScreen" component={HomeScreen} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </ThemeProvider>
+    <>
+      <ThemeProvider theme={theme}>
+        <NavigationContainer>
+          <Stack.Navigator
+            screenOptions={{ headerShown: false }}
+            initialRouteName="SplashScreen"
+          >
+            <Stack.Screen name="SplashScreen" component={SplashScreen} />
+            <Stack.Screen name="HomeScreen" component={HomeScreen} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </ThemeProvider>
+
+      <View style={{ paddingTop: getStatusBarHeight() + 17 }}>
+        <StatusBar
+          barStyle={"light-content"}
+          backgroundColor={theme.colors.dark}
+        />
+      </View>
+    </>
   );
 }
