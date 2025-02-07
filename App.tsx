@@ -1,4 +1,4 @@
-import { NavigationContainer, ThemeProvider } from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import {
   useFonts,
@@ -9,6 +9,7 @@ import {
 import { Text, View, ActivityIndicator } from "react-native";
 import { SplashScreen } from "./src/screens/SplashScreen";
 import { theme } from "./src/themes";
+import { ThemeProvider } from "styled-components";
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -28,7 +29,8 @@ export default function App() {
   }
 
   return (
-      <NavigationContainer theme={theme}>
+    <ThemeProvider theme={theme}>
+      <NavigationContainer>
         <Stack.Navigator
           screenOptions={{ headerShown: false }}
           initialRouteName="Home"
@@ -36,5 +38,6 @@ export default function App() {
           <Stack.Screen name="Home" component={SplashScreen} />
         </Stack.Navigator>
       </NavigationContainer>
+    </ThemeProvider>
   );
 }
