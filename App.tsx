@@ -10,6 +10,7 @@ import { Text, View, ActivityIndicator } from "react-native";
 import { SplashScreen } from "./src/screens/SplashScreen";
 import { theme } from "./src/themes";
 import { ThemeProvider } from "styled-components";
+import { HomeScreen } from "./src/screens/HomeScreen";
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -33,9 +34,10 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{ headerShown: false }}
-          initialRouteName="Home"
+          initialRouteName="HomeScreen"
         >
-          <Stack.Screen name="Home" component={SplashScreen} />
+          <Stack.Screen name="SplashScreen" component={SplashScreen} />
+          <Stack.Screen name="HomeScreen" component={HomeScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </ThemeProvider>
