@@ -803,6 +803,11 @@
   resolved "https://registry.yarnpkg.com/@expo-google-fonts/outfit/-/outfit-0.2.3.tgz#63d7acd2c96f5a9763a20d64dab5ae68b54eac6a"
   integrity sha512-uLW3n6WwtrF33IBDyuHKPgBNcJKe3O8+YXS1f7SLYdb5jEgXP2udNzzhmiw7OYvIAjfS+XDOw0uTELSB36VzOQ==
 
+"@expo-google-fonts/source-sans-pro@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/source-sans-pro/-/source-sans-pro-0.2.3.tgz#e667c909d04bb676c1066562be763395fc4b00b4"
+  integrity sha512-/vDE5/vECqJT4Xdi1QiKG6rL8+mdrvqu3OlSe2dMPB7B9BR+cWsu0fSHTqRa1cQY03bXSPSIwOiHG4fy/CHBJg==
+
 "@expo/bunyan@^4.0.0":
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@expo/bunyan/-/bunyan-4.0.1.tgz#ab9e17e36c71c704a0ce72168378a487368da736"
