@@ -2,9 +2,10 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import {
   useFonts,
-  Outfit_400Regular,
-  Outfit_700Bold,
-} from "@expo-google-fonts/outfit";
+  SourceSansPro_400Regular,
+  SourceSansPro_600SemiBold,
+  SourceSansPro_700Bold,
+} from "@expo-google-fonts/source-sans-pro";
 import { Text, View, ActivityIndicator } from "react-native";
 import { SplashScreen } from "./src/screens/SplashScreen";
 
@@ -12,8 +13,9 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   let [fontsLoaded] = useFonts({
-    Outfit_400Regular,
-    Outfit_700Bold,
+    SourceSansPro_400Regular,
+    SourceSansPro_600SemiBold,
+    SourceSansPro_700Bold
   });
 
   if (!fontsLoaded) {
