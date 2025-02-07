@@ -6,7 +6,8 @@ export const styles = StyleSheet.create({
     width: theme.metrics.px(88),
     height: theme.metrics.px(124),
     borderRadius: theme.metrics.px(8),
-    overflow: "hidden"
+    overflow: "hidden",
+    marginRight: theme.metrics.px(12),
   },
 
   cardImage: {

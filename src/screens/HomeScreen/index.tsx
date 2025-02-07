@@ -3,11 +3,13 @@ import { View } from 'react-native';
 
 import { styles } from './styles';
 import { Card } from '../../components/molecules/Card';
+import { Container } from '../../components/atoms/Container';
+import { HomeList } from '../../components/organisms/HomeList';
 
 export function HomeScreen() {
   return (
-    <View style={styles.container}>
-      <Card item={{image_url: "https://sociedadejedi.com.br/wp-content/uploads/2016/01/Vader1.jpg"}} />
-    </View>
+    <Container style={styles.container}>
+      <HomeList/>
+    </Container>
   );
 }
