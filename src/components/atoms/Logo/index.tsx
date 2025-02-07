@@ -1,8 +1,8 @@
 import React from "react";
-import { Image, StyleProp, TextStyle, View } from "react-native";
+import { Image, StyleProp, ImageStyle, View } from "react-native";
 
 interface LogoProps {
-  style?: StyleProp<TextStyle>;
+  style?: StyleProp<ImageStyle>;
 }
 export function Logo({ style }: LogoProps) {
   return (
