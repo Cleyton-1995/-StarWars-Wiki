@@ -8,7 +8,6 @@ export const styles = StyleSheet.create({
     flexDirection: "column",
     width: "100%",
     height: theme.metrics.px(460),
-    marginBottom: theme.metrics.px(20),
   },
 
   ImageBackground: {
@@ -22,7 +21,7 @@ export const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
     paddingHorizontal: theme.metrics.px(24),
-    paddingTop: theme.metrics.px(56),
+    paddingTop: theme.metrics.px(10),
   },
 
   logo: {
@@ -46,7 +45,7 @@ export const styles = StyleSheet.create({
   tag: {
     height: theme.metrics.px(24),
     paddingHorizontal: theme.metrics.px(4),
-    marginTop: theme.metrics.px(214),
+    marginTop: theme.metrics.px(200),
   },
 
   buttonContainer: {
@@ -59,7 +58,6 @@ export const styles = StyleSheet.create({
 
   buttonAdd: {
     color: theme.colors.white,
-    fontSize: theme.metrics.px(20),
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "transparent",
@@ -72,15 +70,14 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     flexDirection: "row",
     backgroundColor: theme.colors.white,
-    paddingHorizontal: theme.metrics.px(10),
-    paddingVertical: theme.metrics.px(8),
+    width: theme.metrics.px(100),
+    height: theme.metrics.px(36),
     borderRadius: theme.metrics.px(8),
     gap: theme.metrics.px(2),
   },
 
   buttonInfo: {
     color: theme.colors.white,
-    fontSize: theme.metrics.px(20),
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "transparent",

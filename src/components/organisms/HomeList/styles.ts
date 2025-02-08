@@ -8,6 +8,8 @@ export const styles = StyleSheet.create({
     alignItems: "flex-start",
     justifyContent: "flex-start",
     width: "100%",
+    marginTop: theme.metrics.px(-55),
+    marginBottom: theme.metrics.px(45)
   },
 
   title: {

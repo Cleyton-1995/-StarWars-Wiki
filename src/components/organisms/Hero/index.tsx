@@ -32,13 +32,14 @@ export function Hero() {
 
           <CustomText style={styles.labelSubtitle} label="Voltando para Casa" />
 
-          <View style={styles.buttonContainer} >
+          <View style={styles.buttonContainer}>
             <Button
               icon="add-circle-outline"
               label="Favoritos"
               library="Ionicons"
               iconColor={theme.colors.white}
               style={styles.buttonAdd}
+              textStyle={{ fontSize: 10 }}
             />
             <Button
               icon="play"
@@ -46,7 +47,7 @@ export function Hero() {
               library="Ionicons"
               iconColor={theme.colors.black}
               style={styles.buttonPlay}
-              textStyle={{ color: theme.colors.black }}
+              textStyle={{ color: theme.colors.black, fontSize: 14 }}
             />
             <Button
               icon="info-outline"
@@ -54,6 +55,7 @@ export function Hero() {
               library="MaterialIcons"
               iconColor={theme.colors.white}
               style={styles.buttonInfo}
+              textStyle={{ fontSize: 10 }}
             />
           </View>
         </LinearGradient>
