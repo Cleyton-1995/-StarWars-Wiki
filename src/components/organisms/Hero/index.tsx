@@ -17,7 +17,7 @@ export function Hero() {
       <ImageBackground
         style={[styles.ImageBackground]}
         source={{
-          uri: "https://static0.cbrimages.com/wordpress/wp-content/uploads/sharedimages/2024/04/naruto-shippuden-tv-series-poster.jpg",
+          uri: "https://e1.pxfuel.com/desktop-wallpaper/804/696/desktop-wallpaper-best-naruto-group.jpg",
         }}
       >
         <LinearGradient
