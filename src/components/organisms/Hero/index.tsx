@@ -11,13 +11,24 @@ import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 import { theme } from "../../../themes";
 import { Button } from "../../molecules/Button";
 
-export function Hero() {
+interface HeroProps {
+  item: {
+    image_url: string;
+    title: string;
+    subtitle: string;
+    type: string;
+    desccription?: string;
+  };
+}
+export function Hero({
+  item: { desccription, image_url, subtitle, title, type },
+}: HeroProps) {
   return (
     <View style={styles.container}>
       <ImageBackground
         style={[styles.ImageBackground]}
         source={{
-          uri: "https://e1.pxfuel.com/desktop-wallpaper/804/696/desktop-wallpaper-best-naruto-group.jpg",
+          uri: image_url,
         }}
       >
         <LinearGradient
@@ -26,11 +37,11 @@ export function Hero() {
         >
           <Logo style={styles.logo} />
 
-          <Tag label="Filme" style={styles.tag} />
+          <Tag label={type} style={styles.tag} />
 
-          <CustomText style={styles.labelTitle} label="Epsódio I" />
+          <CustomText style={styles.labelTitle} label={title} />
 
-          <CustomText style={styles.labelSubtitle} label="Voltando para Casa" />
+          <CustomText style={styles.labelSubtitle} label={subtitle} />
 
           <View style={styles.buttonContainer}>
             <Button

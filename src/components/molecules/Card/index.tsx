@@ -1,6 +1,7 @@
 import React from "react";
 import { Image, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
+import { useNavigation } from "@react-navigation/native";
 
 interface CardProps {
   item: {
@@ -9,8 +10,13 @@ interface CardProps {
 }
 
 export function Card({ item }: CardProps) {
+  const navigation = useNavigation();
   return (
-    <TouchableOpacity activeOpacity={0.8} style={styles.container}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate("DatailScreen")}
+      activeOpacity={0.8}
+      style={styles.container}
+    >
       <Image source={{ uri: item.image_url }} style={styles.cardImage} />
     </TouchableOpacity>
   );
