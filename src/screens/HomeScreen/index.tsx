@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { ScrollView, View } from "react-native";
 
 import { styles } from "./styles";
 import { Card } from "../../components/molecules/Card";
@@ -21,10 +21,10 @@ const FakeDataCharacteres = [
 ];
 export function HomeScreen() {
   return (
-    <Container style={styles.container}>
+    <ScrollView style={styles.container}>
       <Hero />
-      <HomeList title="Filmes" data={FakeDataCharacteres} />
+      <HomeList title="Filmes e Séries" data={FakeDataCharacteres} />
       <HomeList title="Personagens" data={FakeDataCharacteres} />
-    </Container>
+    </ScrollView>
   );
 }

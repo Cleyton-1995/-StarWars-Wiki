@@ -16,10 +16,11 @@ export const styles = StyleSheet.create({
     marginLeft: theme.metrics.px(24),
     paddingTop: theme.metrics.px(12),
     fontSize: theme.metrics.px(18),
-    fontWeight: "bold"
+    fontWeight: "bold",
   },
   contentContainer: {
     paddingTop: theme.metrics.px(12),
-    paddingLeft: theme.metrics.px(24)
-  }
+    paddingBottom: theme.metrics.px(24),
+    paddingLeft: theme.metrics.px(24),
+  },
 });
