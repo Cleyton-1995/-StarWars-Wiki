@@ -43,7 +43,7 @@ export default function App() {
         </NavigationContainer>
       </ThemeProvider>
 
-      <View style={{paddingTop: getStatusBarHeight() + 17 }}>
+      <View style={{top: getStatusBarHeight() + 17 }}>
         <StatusBar
           barStyle={"light-content"}
           backgroundColor={theme.colors.dark}
