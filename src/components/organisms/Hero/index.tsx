@@ -10,6 +10,7 @@ import { Tag } from "../../molecules/Tag";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 import { theme } from "../../../themes";
 import { Button } from "../../molecules/Button";
+import { useNavigation } from "@react-navigation/native";
 
 interface HeroProps {
   item: {
@@ -19,10 +20,18 @@ interface HeroProps {
     type: string;
     description?: string;
   };
+  withoutLogo?: boolean;
 }
 export function Hero({
   item: { description, image_url, subtitle, title, type },
+  withoutLogo,
 }: HeroProps) {
+  const navigation = useNavigation();
+
+  function onBack() {
+    navigation.navigate("HomeScreen");
+  }
+
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -35,7 +44,19 @@ export function Hero({
           style={styles.gradient}
           colors={[colors.dark, "transparent", colors.dark]}
         >
-          <Logo style={styles.logo} />
+          {withoutLogo ? (
+            <Logo
+              style={styles.icon}
+              image={false}
+              icon="chevron-back"
+              library="Ionicons"
+              iconColor={theme.colors.white}
+              onPress={onBack}
+              barStyle={styles.icon}
+            />
+          ) : (
+            <Logo style={styles.logo} />
+          )}
 
           <Tag label={type} style={styles.tag} />
 

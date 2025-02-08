@@ -4,7 +4,6 @@ import { Ionicons, MaterialIcons, Feather } from "@expo/vector-icons";
 import { styles } from "./styles";
 import { theme } from "../../../themes";
 
-// Definição das bibliotecas de ícones disponíveis
 type IconLibrary = "Ionicons" | "MaterialIcons" | "Feather";
 
 interface ButtonProps {

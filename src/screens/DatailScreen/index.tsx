@@ -12,6 +12,7 @@ export function DatailScreen() {
     <ScrollView style={styles.container}>
       <Hero
         item={selectedData}
+        withoutLogo
       />
     </ScrollView>
   );

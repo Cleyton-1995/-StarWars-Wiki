@@ -29,6 +29,12 @@ export const styles = StyleSheet.create({
     width: theme.metrics.px(48),
   },
 
+  icon: {
+    height: theme.metrics.px(48),
+    width: theme.metrics.px(48),
+    paddingTop: theme.metrics.px(15),
+  },
+
   labelTitle: {
     color: theme.colors.white,
     fontFamily: theme.fonts.bold,
