@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
     backgroundColor: theme.colors.dark,
     alignItems: "center",
     justifyContent: "center",
+    height: "100%",
   },
 
   logo: {

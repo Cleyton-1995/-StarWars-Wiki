@@ -62,6 +62,7 @@ export const styles = StyleSheet.create({
     fontSize: theme.metrics.px(20),
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "transparent",
   },
   buttonPlay: {
     display: "flex",
@@ -82,5 +83,6 @@ export const styles = StyleSheet.create({
     fontSize: theme.metrics.px(20),
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "transparent",
   },
 });
