@@ -26,8 +26,8 @@ export const styles = StyleSheet.create({
   },
 
   logo: {
-    height: theme.metrics.px(28),
-    width: theme.metrics.px(28),
+    height: theme.metrics.px(48),
+    width: theme.metrics.px(48),
   },
 
   labelTitle: {

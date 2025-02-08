@@ -10,15 +10,14 @@ export const styles = StyleSheet.create({
   },
 
   logo: {
-    height: theme.metrics.px(64),
-    width: theme.metrics.px(64),
+    height: theme.metrics.px(100),
+    width: theme.metrics.px(100),
   },
 
   title: {
     color: theme.colors.white,
     fontSize: theme.metrics.px(24),
     fontWeight: "bold",
-    marginTop: theme.metrics.px(12),
     fontFamily: theme.fonts.bold,
   },
 });

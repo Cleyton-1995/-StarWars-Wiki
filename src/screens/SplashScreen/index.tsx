@@ -14,7 +14,7 @@ export function SplashScreen({ navigation }: any) {
   return (
     <Container style={styles.container}>
       <Logo style={styles.logo} />
-      <CustomText style={styles.title} label=" StarWars-Wiki" />
+      <CustomText style={styles.title} label=" Naruto-Wiki" />
     </Container>
   );
 }

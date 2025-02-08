@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, StyleProp, ImageStyle, View } from "react-native";
 
-import LogoImage from "../../../assets/logo.png";
+import LogoImage from "../../../assets/lg.png";
 
 interface LogoProps {
   style?: StyleProp<ImageStyle>;
