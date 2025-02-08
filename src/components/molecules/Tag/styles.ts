@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
    justifyContent: 'center',
    backgroundColor: theme.colors.red,
    borderRadius: theme.metrics.px(24),
-   maxWidth: theme.metrics.px(80),
+   maxWidth: theme.metrics.px(90),
    paddingTop: theme.metrics.px(2),
    color: theme.colors.white,
    width: "auto",

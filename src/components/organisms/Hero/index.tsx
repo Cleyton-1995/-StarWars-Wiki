@@ -17,11 +17,11 @@ interface HeroProps {
     title: string;
     subtitle: string;
     type: string;
-    desccription?: string;
+    description?: string;
   };
 }
 export function Hero({
-  item: { desccription, image_url, subtitle, title, type },
+  item: { description, image_url, subtitle, title, type },
 }: HeroProps) {
   return (
     <View style={styles.container}>
