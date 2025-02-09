@@ -59,7 +59,7 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginTop: theme.metrics.px(10),
+    marginTop: theme.metrics.px(15),
   },
 
   buttonAdd: {
