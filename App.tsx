@@ -33,11 +33,26 @@ function BottomTabs() {
       screenOptions={({ route }) => ({
         headerShown: false,
         tabBarIcon: ({ focused, color, size }) => (
-          <Ionicons name={routeIcons[route.name]} size={size} color={color} />
+          <Ionicons
+            name={routeIcons[route.name]}
+            size={size}
+            color={focused ? theme.colors.red : theme.colors.white}
+          />
         ),
         tabBarActiveTintColor: theme.colors.red,
-        tabBarInactiveTintColor: theme.colors.dark,
-        tabBarStyle: { backgroundColor: theme.colors.black },
+        tabBarInactiveTintColor: theme.colors.white,
+        tabBarStyle: {
+          backgroundColor: theme.colors.black,
+          height: theme.metrics.px(64),
+          paddingTop: theme.metrics.px(5),
+          paddingBottom: theme.metrics.px(5),
+          justifyContent: "center",
+          alignItems: "center",
+        },
+        tabBarItemStyle: {
+          alignItems: "center",
+          justifyContent: "center",
+        },
       })}
     >
       <Tab.Screen
