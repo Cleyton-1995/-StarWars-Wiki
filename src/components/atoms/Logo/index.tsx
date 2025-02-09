@@ -18,7 +18,7 @@ interface LogoProps {
   style?: StyleProp<ImageStyle>;
   barStyle?: StyleProp<TextStyle>;
   image?: boolean;
-  icon?: string;
+  icon?: keyof typeof Ionicons.glyphMap | keyof typeof MaterialIcons.glyphMap | keyof typeof Feather.glyphMap;
   library?: IconLibrary;
   iconSize?: number;
   iconColor?: string;
@@ -46,16 +46,11 @@ export function Logo({
       {image ? (
         <Image style={style} source={LogoImage} />
       ) : (
-        <TouchableOpacity activeOpacity={0.8}>
-          icon && (
-          <IconComponent
-            onPress={onPress}
-            name={icon as any}
-            size={iconSize}
-            color={iconColor}
-          />
-          )
-        </TouchableOpacity>
+        icon && (
+          <TouchableOpacity activeOpacity={0.8} onPress={onPress}>
+            <IconComponent name={icon as any} size={iconSize} color={iconColor} />
+          </TouchableOpacity>
+        )
       )}
     </View>
   );
