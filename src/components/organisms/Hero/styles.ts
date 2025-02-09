@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
     paddingHorizontal: theme.metrics.px(24),
-    paddingTop: theme.metrics.px(10),
+    paddingTop: theme.metrics.px(50),
   },
 
   logo: {
@@ -32,7 +32,7 @@ export const styles = StyleSheet.create({
   icon: {
     height: theme.metrics.px(48),
     width: theme.metrics.px(48),
-    paddingTop: theme.metrics.px(15),
+    paddingTop: theme.metrics.px(10),
   },
 
   labelTitle: {

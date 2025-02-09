@@ -10,8 +10,8 @@ export const styles = StyleSheet.create({
    backgroundColor: theme.colors.red,
    borderRadius: theme.metrics.px(24),
    maxWidth: theme.metrics.px(90),
-   paddingTop: theme.metrics.px(2),
    color: theme.colors.white,
+   padding: theme.metrics.px(3.5),
    width: "auto",
   }
 });
