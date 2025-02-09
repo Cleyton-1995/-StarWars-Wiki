@@ -8,5 +8,9 @@ export interface TagProps {
 }
 
 export function Tag({ style, label }: TagProps) {
-  return <Text style={[styles.container, style]}>{label}</Text>;
+  return (
+    <View style={[styles.container, style]}>
+      <Text style={styles.text}>{label}</Text>
+    </View>
+  );
 }

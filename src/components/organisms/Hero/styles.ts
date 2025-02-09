@@ -49,9 +49,9 @@ export const styles = StyleSheet.create({
   },
 
   tag: {
-    height: theme.metrics.px(24),
-    paddingHorizontal: theme.metrics.px(4),
     marginTop: theme.metrics.px(200),
+    justifyContent: 'center',  
+    alignItems: 'center',
   },
 
   buttonContainer: {
