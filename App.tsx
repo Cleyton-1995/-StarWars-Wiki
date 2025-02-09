@@ -15,8 +15,50 @@ import { getStatusBarHeight } from "react-native-iphone-x-helper";
 import { DatailScreen } from "./src/screens/DatailScreen";
 import { Favorites } from "./src/screens/Favorites";
 import { Search } from "./src/screens/Search";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Ionicons } from "@expo/vector-icons";
 
+const routeIcons = {
+  HomeScreen: "home-outline",
+  Search: "search-outline",
+  Favorites: "heart-outline",
+};
+
+const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
+
+function BottomTabs() {
+  return (
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        headerShown: false,
+        tabBarIcon: ({ focused, color, size }) => (
+          <Ionicons name={routeIcons[route.name]} size={size} color={color} />
+        ),
+        tabBarActiveTintColor: theme.colors.red,
+        tabBarInactiveTintColor: theme.colors.dark,
+        tabBarStyle: { backgroundColor: theme.colors.black },
+      })}
+    >
+      <Tab.Screen
+        name="HomeScreen"
+        component={HomeScreen}
+        options={{ tabBarLabel: "Home" }}
+      />
+      <Tab.Screen
+        name="Search"
+        component={Search}
+        options={{ tabBarLabel: "Pesquisar" }}
+      />
+      <Tab.Screen
+        name="Favorites"
+        component={Favorites}
+        options={{ tabBarLabel: "Favoritos" }}
+      />
+    </Tab.Navigator>
+  );
+}
+
 export default function App() {
   let [fontsLoaded] = useFonts({
     SourceSansPro_400Regular,
@@ -41,10 +83,8 @@ export default function App() {
             initialRouteName="SplashScreen"
           >
             <Stack.Screen name="SplashScreen" component={SplashScreen} />
-            <Stack.Screen name="HomeScreen" component={HomeScreen} />
+            <Stack.Screen name="HomeScreen" component={BottomTabs} />
             <Stack.Screen name="DatailScreen" component={DatailScreen} />
-            <Stack.Screen name="Favorites" component={Favorites} />
-            <Stack.Screen name="Search" component={Search} />
           </Stack.Navigator>
         </NavigationContainer>
       </ThemeProvider>
