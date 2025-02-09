@@ -13,6 +13,8 @@ import { ThemeProvider } from "styled-components";
 import { HomeScreen } from "./src/screens/HomeScreen";
 import { getStatusBarHeight } from "react-native-iphone-x-helper";
 import { DatailScreen } from "./src/screens/DatailScreen";
+import { Favorites } from "./src/screens/Favorites";
+import { Search } from "./src/screens/Search";
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -41,6 +43,8 @@ export default function App() {
             <Stack.Screen name="SplashScreen" component={SplashScreen} />
             <Stack.Screen name="HomeScreen" component={HomeScreen} />
             <Stack.Screen name="DatailScreen" component={DatailScreen} />
+            <Stack.Screen name="Favorites" component={Favorites} />
+            <Stack.Screen name="Search" component={Search} />
           </Stack.Navigator>
         </NavigationContainer>
       </ThemeProvider>

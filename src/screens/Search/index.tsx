@@ -1,12 +1,12 @@
-import React from 'react';
-import { View } from 'react-native';
+import React from "react";
+import { Text, View } from "react-native";
 
-import { styles } from './styles';
+import { styles } from "./styles";
 
 export function Search() {
   return (
     <View style={styles.container}>
-
+      <Text>Search</Text>
     </View>
   );
 }
