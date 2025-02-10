@@ -13,8 +13,8 @@ export function HomeScreen() {
         item={{
           image_url:
             "https://e1.pxfuel.com/desktop-wallpaper/804/696/desktop-wallpaper-best-naruto-group.jpg",
-          title: "Epsódio I",
-          subtitle: "Voltando para Casa",
+          title: "Naruto o Filme",
+          subtitle: "O confronto Ninja no País da Neve",
           type: "Filme",
         }}
       />
