@@ -1,4 +1,4 @@
-export const FakeDataCharacteres = [
+export const FakeDataCharacteresPersons = [
   {
     id: 0,
     image_url:
