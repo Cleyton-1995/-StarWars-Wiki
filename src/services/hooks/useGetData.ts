@@ -1,18 +1,9 @@
-import { useEffect, useState } from "react";
 import { api } from "../api";
 
-interface Film {
-  image_url: string;
-  title: string;
-  subtitle: string;
-  type: string;
-  description?: string;
-}
-
 export function useGetData() {
-  async function getFilms(): Promise<Film[] | null> {
+  async function getFilms() {
     try {
-      const { data } = await api.get<Film[]>("/films");
+      const { data } = await api.get("/films");
       return data;
     } catch (error) {
       console.error("Erro ao buscar filmes:", error);
@@ -20,9 +11,9 @@ export function useGetData() {
     }
   }
 
-  async function getPersonage(): Promise<Film[] | null> {
+  async function getPersonage(){
     try {
-      const { data } = await api.get<Film[]>("/personage");
+      const { data } = await api.get("/personage");
       return data;
     } catch (error) {
       console.error("Erro ao buscar filmes:", error);

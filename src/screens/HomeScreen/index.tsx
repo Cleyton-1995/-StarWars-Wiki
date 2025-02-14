@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { ScrollView, View } from "react-native";
+import React, { useEffect, useState } from "react";
+import { ActivityIndicator, ScrollView, View } from "react-native";
 
 import { styles } from "./styles";
 import { HomeList } from "../../components/organisms/HomeList";
@@ -8,29 +8,42 @@ import { FakeDataCharacteresFilms } from "../../services/seedsFilms";
 import { FakeDataCharacteresPersons } from "../../services/seedsPersons";
 import { useGetData } from "../../services/hooks/useGetData";
 export function HomeScreen() {
-  const { getFilms } = useGetData();
+  const { getFilms, getPersonage } = useGetData();
 
-  async function callGetFilmes() {
-    const response = await getFilms();
+  const [loading, setLoading] = useState(true);
+  const [films, setFilms] = useState([]);
+  const [personage, setPersonage] = useState([]);
+
+  console.log(loading, personage, films);
+
+  async function callGetData() {
+    const filmsResponse = await getFilms();
+    const personageResponse = await getPersonage();
+
+    if (!filmsResponse.error && !personageResponse.error) {
+      setFilms(filmsResponse);
+      setPersonage(personageResponse);
+      setLoading(false);
+    }
   }
 
   useEffect(() => {
-    callGetFilmes();
+    callGetData();
   }, []);
+
+  if (loading) {
+    return (
+      <View style={{alignItems: "center", justifyContent: "center"}}>
+        <ActivityIndicator size="large" color="#E60C0D" />
+      </View>
+    );
+  }
 
   return (
     <ScrollView style={styles.container}>
-      <Hero
-        item={{
-          image_url:
-            "https://e1.pxfuel.com/desktop-wallpaper/804/696/desktop-wallpaper-best-naruto-group.jpg",
-          title: "Naruto o Filme",
-          subtitle: "O confronto Ninja no País da Neve",
-          type: "Filme",
-        }}
-      />
-      <HomeList title="Filmes e Séries" data={FakeDataCharacteresFilms} />
-      <HomeList title="Personagens" data={FakeDataCharacteresPersons} />
+      <Hero item={films[2]} />
+      <HomeList title="Filmes e Séries" data={films} />
+      <HomeList title="Personagens" data={personage} />
     </ScrollView>
   );
 }
