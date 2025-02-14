@@ -6,7 +6,18 @@ import { HomeList } from "../../components/organisms/HomeList";
 import { Hero } from "../../components/organisms/Hero";
 import { FakeDataCharacteresFilms } from "../../services/seedsFilms";
 import { FakeDataCharacteresPersons } from "../../services/seedsPersons";
+import { useGetData } from "../../services/hooks/useGetData";
 export function HomeScreen() {
+  const { getFilms } = useGetData();
+
+  async function callGetFilmes() {
+    const response = await getFilms();
+  }
+
+  useEffect(() => {
+    callGetFilmes();
+  }, []);
+
   return (
     <ScrollView style={styles.container}>
       <Hero
