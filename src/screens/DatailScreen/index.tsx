@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView } from "react-native";
+import { ScrollView, Text } from "react-native";
 
 import { styles } from "./styles";
 import { Hero } from "../../components/organisms/Hero";
@@ -14,6 +14,14 @@ export function DatailScreen() {
         item={selectedData}
         withoutLogo
       />
+
+      <Text style={styles.descriptionText} >
+        Descrição
+      </Text>
+
+      <Text style={styles.description} >
+        {selectedData.description}
+      </Text>
     </ScrollView>
   );
 }
