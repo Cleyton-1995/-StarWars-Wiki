@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ImageBackground, Text, TouchableOpacity, View } from "react-native";
 
 import { styles } from "./styles";
@@ -11,6 +11,7 @@ import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 import { theme } from "../../../themes";
 import { Button } from "../../molecules/Button";
 import { useNavigation } from "@react-navigation/native";
+import { useFavorites } from "../../../services/hooks/useFavorites";
 
 interface HeroProps {
   item: {
@@ -28,8 +29,25 @@ export function Hero({
 }: HeroProps) {
   const navigation = useNavigation();
 
+  const { addFavorites, getFavorites } = useFavorites();
+
   function onBack() {
     navigation.navigate("HomeScreen");
+  }
+
+  async function addDataToFavorites() {
+    try {
+      const result = await addFavorites({
+        image_url,
+        title,
+        subtitle,
+        type,
+        description,
+      });
+      console.log("Adicionado aos favoritos:", result);
+    } catch (error) {
+      console.error("Erro ao adicionar aos favoritos:", error);
+    }
   }
 
   return (
@@ -72,6 +90,7 @@ export function Hero({
               iconColor={theme.colors.white}
               style={styles.buttonAdd}
               textStyle={{ fontSize: 10 }}
+              onPress={addDataToFavorites}
             />
             <Button
               icon="play"

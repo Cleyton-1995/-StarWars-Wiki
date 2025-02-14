@@ -8,7 +8,7 @@ export function useFavorites() {
       const value = await AsyncStorage.getItem(DB_KEY);
       let newDB = [];
 
-      if (value) {
+      if (value !== null) {
         const db = JSON.parse(value);
         newDB = [...db, data];
       } else {
@@ -27,7 +27,7 @@ export function useFavorites() {
     try {
       const value = await AsyncStorage.getItem(DB_KEY);
 
-      if (value) {
+      if (value !== null) {
         return JSON.parse(value);
       }
 

@@ -14,8 +14,6 @@ export function HomeScreen() {
   const [films, setFilms] = useState([]);
   const [personage, setPersonage] = useState([]);
 
-  console.log(loading, personage, films);
-
   async function callGetData() {
     const filmsResponse = await getFilms();
     const personageResponse = await getPersonage();
