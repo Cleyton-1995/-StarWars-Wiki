@@ -38,8 +38,29 @@ export function useFavorites() {
     }
   }
 
+  async function removeFavorite(data) {
+    try {
+      const value = await AsyncStorage.getItem(DB_KEY);
+
+      if (!value) return [];
+
+      const favorites = JSON.parse(value);
+
+      const updatedFavorites = favorites.filter(
+        (item) => item.title !== data.title && item.id !== data.id
+      );
+
+      await AsyncStorage.setItem(DB_KEY, JSON.stringify(updatedFavorites));
+
+      return updatedFavorites;
+    } catch (error) {
+      console.error("Erro ao remover favorito:", error);
+      return null;
+    }
+  }
   return {
     addFavorites,
     getFavorites,
+    removeFavorite,
   };
 }

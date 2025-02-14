@@ -29,7 +29,7 @@ export function Hero({
 }: HeroProps) {
   const navigation = useNavigation();
 
-  const { addFavorites, getFavorites } = useFavorites();
+  const { addFavorites, getFavorites, removeFavorite } = useFavorites();
 
   function onBack() {
     navigation.navigate("HomeScreen");
