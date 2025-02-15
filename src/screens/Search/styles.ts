@@ -5,7 +5,6 @@ export const styles = StyleSheet.create({
   container: {
       flex: 1,
       paddingHorizontal: theme.metrics.px(24),
-      paddingVertical: theme.metrics.px(56),
       backgroundColor: theme.colors.dark,
       
     },

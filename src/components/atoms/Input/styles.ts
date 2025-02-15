@@ -3,6 +3,11 @@ import { theme } from "../../../themes";
 
 export const styles = StyleSheet.create({
   container: {
+   paddingTop: theme.metrics.px(6),
+   paddingBottom: theme.metrics.px(6),
+  },
+  
+   input: {
     display: "flex",
     alignItems: "flex-start",
     justifyContent: "flex-start",

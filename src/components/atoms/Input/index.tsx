@@ -6,11 +6,13 @@ import { theme } from "../../../themes";
 
 export function Input(props) {
   return (
-    <TextInput
-      {...props}
-      style={styles.container}
-      placeholder="Nome do Filme ou Personagem"
-      placeholderTextColor={theme.colors.grey}
-    />
+    <View style={styles.container} >
+      <TextInput
+        {...props}
+        style={styles.input}
+        placeholder="Nome do Filme ou Personagem"
+        placeholderTextColor={theme.colors.grey}
+      />
+    </View>
   );
 }

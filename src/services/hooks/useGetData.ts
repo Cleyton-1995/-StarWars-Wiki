@@ -11,7 +11,7 @@ export function useGetData() {
     }
   }
 
-  async function getPersonage(){
+  async function getPersonage() {
     try {
       const { data } = await api.get("/personage");
       return data;
@@ -21,5 +21,33 @@ export function useGetData() {
     }
   }
 
-  return { getFilms, getPersonage };
+  async function getSearch(query) {
+    try {
+      const searchQuery = query.trim().toLowerCase();
+      if (!searchQuery) return [];
+  
+      const [filmsResponse, personageResponse] = await Promise.all([
+        api.get("/films"),
+        api.get("/personage"),
+      ]);
+  
+      const films = filmsResponse.data || [];
+      const personages = personageResponse.data || [];
+  
+      const filteredFilms = films.filter((film) =>
+        film.subtitle.toLowerCase().includes(searchQuery)
+      );
+  
+      const filteredPersonages = personages.filter((personage) =>
+        personage.title.toLowerCase().includes(searchQuery)
+      );
+  
+      return [...filteredFilms, ...filteredPersonages];
+    } catch (error) {
+      console.error("Erro ao buscar filmes e personagens:", error);
+      return [];
+    }
+  }
+
+  return { getFilms, getPersonage, getSearch };
 }

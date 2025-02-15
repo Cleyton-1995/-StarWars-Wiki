@@ -14,9 +14,10 @@ interface Item {
 
 interface HomeListProps {
   type?: string;
+  loading?: boolean;
   data?: { id: number; image_url: string }[];
 }
-export function GreedList({ data, type }: HomeListProps) {
+export function GreedList({ data, type, loading  }: HomeListProps) {
   return (
     <FlatList
       numColumns={3}
