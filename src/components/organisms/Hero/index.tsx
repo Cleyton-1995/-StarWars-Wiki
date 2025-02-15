@@ -24,10 +24,12 @@ interface HeroProps {
     description?: string;
   };
   withoutLogo?: boolean;
+  hideInfoButton?: boolean;
 }
 export function Hero({
   item: { id, description, image_url, subtitle, title, type },
   withoutLogo,
+  hideInfoButton = false,
 }: HeroProps) {
   const { setSelectedData } = useDataStorage();
 
@@ -66,8 +68,8 @@ export function Hero({
 
   function closeModal() {
     setTimeout(() => {
-      setShowFavoriteModal(null)
-    }, 1000)
+      setShowFavoriteModal(null);
+    }, 1000);
   }
 
   async function addDataToFavorite() {
@@ -139,15 +141,17 @@ export function Hero({
               style={styles.buttonPlay}
               textStyle={{ color: theme.colors.black, fontSize: 14 }}
             />
-            <Button
-              icon="info-outline"
-              label="Saiba Mais"
-              library="MaterialIcons"
-              iconColor={theme.colors.white}
-              style={styles.buttonInfo}
-              textStyle={{ fontSize: 10 }}
-              onPress={onPressDatail}
-            />
+            {!hideInfoButton && ( 
+              <Button
+                icon="info-outline"
+                label="Saiba Mais"
+                library="MaterialIcons"
+                iconColor={theme.colors.white}
+                style={styles.buttonInfo}
+                textStyle={{ fontSize: 10 }}
+                onPress={onPressDatail}
+              />
+            )}
           </View>
         </LinearGradient>
       </ImageBackground>

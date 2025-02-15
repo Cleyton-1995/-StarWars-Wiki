@@ -13,6 +13,7 @@ export function DatailScreen() {
       <Hero
         item={selectedData}
         withoutLogo
+        hideInfoButton={true}
       />
 
       <Text style={styles.descriptionText} >
