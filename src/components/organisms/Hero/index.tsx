@@ -12,6 +12,7 @@ import { Button } from "../../molecules/Button";
 import { useNavigation } from "@react-navigation/native";
 import { useFavorites } from "../../../services/hooks/useFavorites";
 import { useDataStorage } from "../../../services/storage/dataStorage";
+import { SuccessModal } from "../../molecules/successModal";
 
 interface HeroProps {
   item: {
@@ -32,6 +33,7 @@ export function Hero({
 
   const [loading, setLoading] = useState(true);
   const [isFavorite, setIsFavorite] = useState(false);
+  const [showFavoriteModal, setShowFavoriteModal] = useState(null);
 
   const item = {
     id,
@@ -62,16 +64,24 @@ export function Hero({
     checkIsFavorite();
   }, []);
 
+  function closeModal() {
+    setTimeout(() => {
+      setShowFavoriteModal(null)
+    }, 1000)
+  }
+
   async function addDataToFavorite() {
-    const result = await addFavorites(item);
-    console.log({ result });
+    await addFavorites(item);
+    setShowFavoriteModal("added");
     checkIsFavorite();
+    closeModal();
   }
 
   async function removeDataFromFavorite() {
-    const result = await removeFavorite(item);
-    console.log({ result });
+    await removeFavorite(item);
+    setShowFavoriteModal("removed");
     checkIsFavorite();
+    closeModal();
   }
 
   function onPressDatail() {
@@ -104,7 +114,7 @@ export function Hero({
           ) : (
             <Logo style={styles.logo} />
           )}
-          
+
           <Tag label={type} style={styles.tag} />
 
           <CustomText style={styles.labelTitle} label={title} />
@@ -141,7 +151,13 @@ export function Hero({
           </View>
         </LinearGradient>
       </ImageBackground>
+      {!!showFavoriteModal && (
+        <SuccessModal
+          type={setShowFavoriteModal}
+          visible={!!showFavoriteModal}
+          onClose={() => showFavoriteModal(null)}
+        />
+      )}
     </View>
   );
 }
-
