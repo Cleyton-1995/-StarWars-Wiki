@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, TouchableOpacity } from "react-native";
+import { Image, ImageStyle, StyleProp, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
 import { useNavigation } from "@react-navigation/native";
 import { useDataStorage } from "../../../services/storage/dataStorage";
@@ -12,9 +12,11 @@ interface CardProps {
     type: string;
     description?: string;
   };
+
+  style?: StyleProp<ImageStyle>;
 }
 
-export function Card({ item }: CardProps) {
+export function Card({ item, style }: CardProps) {
   const navigation = useNavigation();
 
   const { setSelectedData } = useDataStorage();
@@ -28,7 +30,7 @@ export function Card({ item }: CardProps) {
     <TouchableOpacity
       onPress={onSelectedData}
       activeOpacity={0.8}
-      style={styles.container}
+      style={[styles.container, style]}
     >
       <Image source={{ uri: item.image_url }} style={styles.cardImage} />
     </TouchableOpacity>
