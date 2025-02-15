@@ -8,6 +8,7 @@ export const styles = StyleSheet.create({
     flexDirection: "column",
     width: "100%",
     height: theme.metrics.px(460),
+    marginBottom: theme.metrics.px(24)
   },
 
   ImageBackground: {
@@ -60,6 +61,7 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     marginTop: theme.metrics.px(15),
+
   },
 
   buttonAdd: {

@@ -27,7 +27,7 @@ export function Favorites() {
   }, []);
 
   return (
-    <ScrollView style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.header}>
         <Logo style={styles.logo} />
         <Text style={styles.favoriteText}>Favoritos</Text>
@@ -36,6 +36,6 @@ export function Favorites() {
       <GreedList
           data={favoriteList}
         />
-    </ScrollView>
+    </View>
   );
 }

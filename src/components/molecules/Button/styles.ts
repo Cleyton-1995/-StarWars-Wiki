@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: theme.metrics.px(8),
     gap: theme.metrics.px(6),
-    backgroundColor: theme.colors.dark, // Padrão
+    backgroundColor: theme.colors.dark,
   },
 
   buttonText: {

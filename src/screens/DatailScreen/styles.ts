@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     fontSize: theme.metrics.px(18),
     color: theme.colors.white,
     fontWeight: "bold",
-    marginTop: theme.metrics.px(30),
+    marginTop: theme.metrics.px(24),
   },
   description: {
     marginTop: theme.metrics.px(12),
