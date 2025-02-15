@@ -7,6 +7,7 @@ import { Hero } from "../../components/organisms/Hero";
 import { FakeDataCharacteresFilms } from "../../services/seedsFilms";
 import { FakeDataCharacteresPersons } from "../../services/seedsPersons";
 import { useGetData } from "../../services/hooks/useGetData";
+import { theme } from "../../themes";
 export function HomeScreen() {
   const { getFilms, getPersonage } = useGetData();
 
@@ -31,7 +32,7 @@ export function HomeScreen() {
 
   if (loading) {
     return (
-      <View style={{alignItems: "center", justifyContent: "center"}}>
+      <View style={{flex: 1,alignItems: "center", justifyContent: "center", backgroundColor: theme.colors.dark}}>
         <ActivityIndicator size="large" color="#E60C0D" />
       </View>
     );

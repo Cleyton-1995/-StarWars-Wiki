@@ -5,7 +5,7 @@ import { styles } from "./styles";
 import { Logo } from "../../components/atoms/Logo";
 import { useFavorites } from "../../services/hooks/useFavorites";
 import { useNavigation } from "@react-navigation/native";
-import { GreedList } from "../../components/organisms/GreedList";
+import { GreedList } from "../../../GreedList";
 
 export function Favorites() {
   const [favoriteList, setFavoriteList] = useState([])
