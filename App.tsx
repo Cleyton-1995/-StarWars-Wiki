@@ -43,7 +43,7 @@ function BottomTabs() {
         tabBarInactiveTintColor: theme.colors.white,
         tabBarStyle: {
           backgroundColor: theme.colors.black,
-          height: theme.metrics.px(64),
+          height: theme.metrics.px(50),
           paddingTop: theme.metrics.px(5),
           paddingBottom: theme.metrics.px(5),
           justifyContent: "center",
