@@ -104,7 +104,7 @@ export function Hero({
           ) : (
             <Logo style={styles.logo} />
           )}
-
+          
           <Tag label={type} style={styles.tag} />
 
           <CustomText style={styles.labelTitle} label={title} />

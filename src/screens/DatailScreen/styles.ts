@@ -9,9 +9,11 @@ export const styles = StyleSheet.create({
 
   descriptionText: {
     marginLeft: theme.metrics.px(24),
-    fontFamily: theme.fonts.black,
+    fontFamily: theme.fonts.bold,
     fontSize: theme.metrics.px(18),
     color: theme.colors.white,
+    fontWeight: "bold",
+    marginTop: theme.metrics.px(30),
   },
   description: {
     marginTop: theme.metrics.px(12),
