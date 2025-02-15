@@ -7,11 +7,11 @@ import { colors } from "../../../themes/colors";
 import { Logo } from "../../atoms/Logo";
 import { CustomText } from "../../atoms/Text";
 import { Tag } from "../../molecules/Tag";
-import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 import { theme } from "../../../themes";
 import { Button } from "../../molecules/Button";
 import { useNavigation } from "@react-navigation/native";
 import { useFavorites } from "../../../services/hooks/useFavorites";
+import { useDataStorage } from "../../../services/storage/dataStorage";
 
 interface HeroProps {
   item: {
@@ -28,6 +28,8 @@ export function Hero({
   item: { id, description, image_url, subtitle, title, type },
   withoutLogo,
 }: HeroProps) {
+  const { setSelectedData } = useDataStorage();
+
   const [loading, setLoading] = useState(true);
   const [isFavorite, setIsFavorite] = useState(false);
 
@@ -70,6 +72,11 @@ export function Hero({
     const result = await removeFavorite(item);
     console.log({ result });
     checkIsFavorite();
+  }
+
+  function onPressDatail() {
+    setSelectedData(item);
+    navigation.navigate("DatailScreen");
   }
 
   return (
@@ -129,6 +136,7 @@ export function Hero({
               iconColor={theme.colors.white}
               style={styles.buttonInfo}
               textStyle={{ fontSize: 10 }}
+              onPress={onPressDatail}
             />
           </View>
         </LinearGradient>
@@ -136,3 +144,4 @@ export function Hero({
     </View>
   );
 }
+
