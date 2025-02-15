@@ -33,7 +33,7 @@ export function GreedList({ data, type }: HomeListProps) {
             style={styles.image}
           />
           <Text style={styles.text}>
-            {`Nenhum ${
+            {`Nenhum ${ 
               type === "favorites" ? "favorito" : "resultado"
             } encontrado.
             `}
