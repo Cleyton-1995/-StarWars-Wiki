@@ -53,6 +53,8 @@ export const styles = StyleSheet.create({
     marginTop: theme.metrics.px(200),
     justifyContent: 'center',  
     alignItems: 'center',
+    paddingTop: theme.metrics.px(2),
+    paddingBottom: theme.metrics.px(2)
   },
 
   buttonContainer: {
