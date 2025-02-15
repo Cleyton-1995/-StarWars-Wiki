@@ -41,18 +41,20 @@ export function useFavorites() {
   async function removeFavorite(data) {
     try {
       const value = await AsyncStorage.getItem(DB_KEY);
-
       if (!value) return [];
 
-      const favorites = JSON.parse(value);
+      let favorites = JSON.parse(value);
 
-      const updatedFavorites = favorites.filter(
-        (item) => item.title !== data.title && item.id !== data.id
+      const index = favorites.findIndex(
+        (item) => item.id === data.id && item.title === data.title
       );
 
-      await AsyncStorage.setItem(DB_KEY, JSON.stringify(updatedFavorites));
+      if (index !== -1) {
+        favorites.splice(index, 1);
+        await AsyncStorage.setItem(DB_KEY, JSON.stringify(favorites));
+      }
 
-      return updatedFavorites;
+      return favorites;
     } catch (error) {
       console.error("Erro ao remover favorito:", error);
       return null;

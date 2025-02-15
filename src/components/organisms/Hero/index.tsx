@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { ImageBackground, Text, TouchableOpacity, View } from "react-native";
 
 import { styles } from "./styles";
@@ -15,6 +15,7 @@ import { useFavorites } from "../../../services/hooks/useFavorites";
 
 interface HeroProps {
   item: {
+    id: string;
     image_url: string;
     title: string;
     subtitle: string;
@@ -24,9 +25,21 @@ interface HeroProps {
   withoutLogo?: boolean;
 }
 export function Hero({
-  item: { description, image_url, subtitle, title, type },
+  item: { id, description, image_url, subtitle, title, type },
   withoutLogo,
 }: HeroProps) {
+  const [loading, setLoading] = useState(true);
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  const item = {
+    id,
+    image_url,
+    title,
+    subtitle,
+    type,
+    description,
+  };
+
   const navigation = useNavigation();
 
   const { addFavorites, getFavorites, removeFavorite } = useFavorites();
@@ -35,19 +48,28 @@ export function Hero({
     navigation.navigate("HomeScreen");
   }
 
-  async function addDataToFavorites() {
-    try {
-      const result = await addFavorites({
-        image_url,
-        title,
-        subtitle,
-        type,
-        description,
-      });
-      console.log("Adicionado aos favoritos:", result);
-    } catch (error) {
-      console.error("Erro ao adicionar aos favoritos:", error);
-    }
+  const checkIsFavorite = async () => {
+    const favorites = await getFavorites();
+    const isInFavorite = favorites.filter(
+      (fv) => fv.id === item.id && fv.title === item.title
+    );
+    setIsFavorite(isInFavorite.length > 0);
+  };
+
+  useEffect(() => {
+    checkIsFavorite();
+  }, []);
+
+  async function addDataToFavorite() {
+    const result = await addFavorites(item);
+    console.log({ result });
+    checkIsFavorite();
+  }
+
+  async function removeDataFromFavorite() {
+    const result = await removeFavorite(item);
+    console.log({ result });
+    checkIsFavorite();
   }
 
   return (
@@ -84,13 +106,13 @@ export function Hero({
 
           <View style={styles.buttonContainer}>
             <Button
-              icon="add-circle-outline"
-              label="Favoritos"
+              label={isFavorite ? "Rem. Favoritos" : "Add. Favoritos"}
+              icon={isFavorite ? "remove-circle-outline" : "add-circle-outline"}
               library="Ionicons"
               iconColor={theme.colors.white}
               style={styles.buttonAdd}
               textStyle={{ fontSize: 10 }}
-              onPress={addDataToFavorites}
+              onPress={isFavorite ? removeDataFromFavorite : addDataToFavorite}
             />
             <Button
               icon="play"

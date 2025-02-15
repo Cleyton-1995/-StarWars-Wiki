@@ -13,7 +13,6 @@ export function Favorites() {
 
   async function callGetFavorites() {
     const favorites = await getFavorites();
-    console.log({ favorites });
   }
 
   useEffect(() => {
