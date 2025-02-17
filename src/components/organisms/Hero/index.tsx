@@ -132,7 +132,7 @@ export function Hero({
 
           <CustomText style={styles.labelSubtitle} label={subtitle} />
 
-          {!hideButtons && ( // Agora, se hideButtons for true, os botões não aparecem
+          {!hideButtons && (
             <View style={styles.buttonContainer}>
               <Button
                 label={isFavorite ? "Rem. Favoritos" : "Add. Favoritos"}
