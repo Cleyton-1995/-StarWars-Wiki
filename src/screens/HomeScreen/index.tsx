@@ -38,7 +38,7 @@ export function HomeScreen() {
 
   return (
     <ScrollView style={styles.container}>
-      <Hero item={films[2]} />
+      <Hero item={films[2]} hideInfoButton={false} />
       <HomeList title="Filmes e Séries" data={films} />
       <HomeList title="Personagens" data={personage} />
     </ScrollView>

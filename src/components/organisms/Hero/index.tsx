@@ -26,11 +26,13 @@ interface HeroProps {
   };
   withoutLogo?: boolean;
   hideInfoButton?: boolean;
+  hideButtons?: boolean;
 }
 export function Hero({
   item: { video, id, description, image_url, subtitle, title, type },
   withoutLogo,
   hideInfoButton = false,
+  hideButtons = false,
 }: HeroProps) {
   const { setSelectedData } = useDataStorage();
 
@@ -45,10 +47,9 @@ export function Hero({
     subtitle,
     type,
     description,
-    video
+    video,
   };
 
-  
   const navigation = useNavigation();
 
   const { addFavorites, getFavorites, removeFavorite } = useFavorites();
@@ -95,9 +96,8 @@ export function Hero({
   }
 
   function onPressWatch() {
-    setSelectedData(item)
+    setSelectedData(item);
     navigation.navigate("WatchScreen", { filmId: item.id });
-
   }
 
   return (
@@ -132,37 +132,43 @@ export function Hero({
 
           <CustomText style={styles.labelSubtitle} label={subtitle} />
 
-          <View style={styles.buttonContainer}>
-            <Button
-              label={isFavorite ? "Rem. Favoritos" : "Add. Favoritos"}
-              icon={isFavorite ? "remove-circle-outline" : "add-circle-outline"}
-              library="Ionicons"
-              iconColor={theme.colors.white}
-              style={styles.buttonAdd}
-              textStyle={{ fontSize: 10 }}
-              onPress={isFavorite ? removeDataFromFavorite : addDataToFavorite}
-            />
-            <Button
-              icon="play"
-              label="Assistir"
-              library="Ionicons"
-              iconColor={theme.colors.black}
-              style={styles.buttonPlay}
-              textStyle={{ color: theme.colors.black, fontSize: 14 }}
-              onPress={onPressWatch}
-            />
-            {!hideInfoButton && ( 
+          {!hideButtons && ( // Agora, se hideButtons for true, os botões não aparecem
+            <View style={styles.buttonContainer}>
               <Button
-                icon="info-outline"
-                label="Saiba Mais"
-                library="MaterialIcons"
+                label={isFavorite ? "Rem. Favoritos" : "Add. Favoritos"}
+                icon={
+                  isFavorite ? "remove-circle-outline" : "add-circle-outline"
+                }
+                library="Ionicons"
                 iconColor={theme.colors.white}
-                style={styles.buttonInfo}
+                style={styles.buttonAdd}
                 textStyle={{ fontSize: 10 }}
-                onPress={onPressDatail}
+                onPress={
+                  isFavorite ? removeDataFromFavorite : addDataToFavorite
+                }
               />
-            )}
-          </View>
+              <Button
+                icon="play"
+                label="Assistir"
+                library="Ionicons"
+                iconColor={theme.colors.black}
+                style={styles.buttonPlay}
+                textStyle={{ color: theme.colors.black, fontSize: 14 }}
+                onPress={onPressWatch}
+              />
+              {!hideInfoButton && (
+                <Button
+                  icon="info-outline"
+                  label="Saiba Mais"
+                  library="MaterialIcons"
+                  iconColor={theme.colors.white}
+                  style={styles.buttonInfo}
+                  textStyle={{ fontSize: 10 }}
+                  onPress={onPressDatail}
+                />
+              )}
+            </View>
+          )}
         </LinearGradient>
       </ImageBackground>
       {!!showFavoriteModal && (
