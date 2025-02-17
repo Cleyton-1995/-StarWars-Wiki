@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.semiBold,
     fontSize: theme.metrics.px(14),
     color: theme.colors.white,
-    width: theme.metrics.px(115),
+    width: theme.metrics.px(130),
     textAlign: "center"
   },
 

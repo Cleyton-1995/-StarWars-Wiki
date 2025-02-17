@@ -5,22 +5,21 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: theme.metrics.px(24),
-    paddingVertical: theme.metrics.px(56),
     backgroundColor: theme.colors.dark,
-    
   },
 
   header: {
     alignItems: "center",
     flexDirection: "row",
     gap: theme.metrics.px(12),
+    paddingTop: theme.metrics.px(50),
   },
 
   favoriteText: {
     color: theme.colors.white,
     fontSize: theme.metrics.px(28),
     fontWeight: "bold",
-    fontFamily: theme.fonts.bold
+    fontFamily: theme.fonts.bold,
   },
 
   logo: {

@@ -13,6 +13,7 @@ export const styles = StyleSheet.create({
       alignItems: "center",
       flexDirection: "row",
       gap: theme.metrics.px(12),
+      paddingTop: theme.metrics.px(50),
     },
   
     favoriteText: {
