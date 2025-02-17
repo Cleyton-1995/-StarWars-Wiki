@@ -17,6 +17,7 @@ import { Favorites } from "./src/screens/Favorites";
 import { Search } from "./src/screens/Search";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
+import { WatchScreen } from "./src/screens/WatchScreen";
 
 const routeIcons = {
   HomeScreen: "home-outline",
@@ -111,6 +112,7 @@ export default function App() {
             <Stack.Screen name="SplashScreen" component={SplashScreen} />
             <Stack.Screen name="HomeScreen" component={BottomTabs} />
             <Stack.Screen name="DatailScreen" component={DatailScreen} />
+            <Stack.Screen name="WatchScreen" component={WatchScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </ThemeProvider>

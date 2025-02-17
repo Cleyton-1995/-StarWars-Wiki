@@ -4,8 +4,6 @@ import { ActivityIndicator, ScrollView, View } from "react-native";
 import { styles } from "./styles";
 import { HomeList } from "../../components/organisms/HomeList";
 import { Hero } from "../../components/organisms/Hero";
-import { FakeDataCharacteresFilms } from "../../services/seedsFilms";
-import { FakeDataCharacteresPersons } from "../../services/seedsPersons";
 import { useGetData } from "../../services/hooks/useGetData";
 import { theme } from "../../themes";
 export function HomeScreen() {

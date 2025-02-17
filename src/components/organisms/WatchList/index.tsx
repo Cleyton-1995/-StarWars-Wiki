@@ -1,7 +1,7 @@
 import React from "react";
 import { FlatList, Text, View } from "react-native";
-import { Card } from "../../molecules/Card";
 import { styles } from "./styles";
+import { Watch } from "../../molecules/Watch";
 
 interface FakeDataItem {
   id: number;
@@ -10,19 +10,16 @@ interface FakeDataItem {
 }
 
 interface HomeListProps {
-  title?: string;
   data?:  { id: number; image_url: string, video: string }[];
 }
 
-export function HomeList({ data, title }: HomeListProps) {
+export function WatchList({ data, }: HomeListProps) {
   return (
     <View style={styles.container} >
-      <Text  style={styles.title}>{title}</Text>
-
       <FlatList
         horizontal
         data={data}
-        renderItem={({ item }: { item: FakeDataItem }) => <Card item={item} />}
+        renderItem={({ item }: { item: FakeDataItem }) => <Watch item={item} />}
         keyExtractor={(item) => item.id.toString()}
         contentContainerStyle={styles.contentContainer}
       />

@@ -48,6 +48,7 @@ export function useGetData() {
       return [];
     }
   }
+  
 
   return { getFilms, getPersonage, getSearch };
 }

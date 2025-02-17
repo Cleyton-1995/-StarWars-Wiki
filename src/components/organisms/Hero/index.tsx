@@ -22,12 +22,13 @@ interface HeroProps {
     subtitle: string;
     type: string;
     description?: string;
+    video: string;
   };
   withoutLogo?: boolean;
   hideInfoButton?: boolean;
 }
 export function Hero({
-  item: { id, description, image_url, subtitle, title, type },
+  item: { video, id, description, image_url, subtitle, title, type },
   withoutLogo,
   hideInfoButton = false,
 }: HeroProps) {
@@ -44,8 +45,10 @@ export function Hero({
     subtitle,
     type,
     description,
+    video
   };
 
+  
   const navigation = useNavigation();
 
   const { addFavorites, getFavorites, removeFavorite } = useFavorites();
@@ -89,6 +92,12 @@ export function Hero({
   function onPressDatail() {
     setSelectedData(item);
     navigation.navigate("DatailScreen");
+  }
+
+  function onPressWatch() {
+    setSelectedData(item)
+    navigation.navigate("WatchScreen", { filmId: item.id });
+
   }
 
   return (
@@ -140,6 +149,7 @@ export function Hero({
               iconColor={theme.colors.black}
               style={styles.buttonPlay}
               textStyle={{ color: theme.colors.black, fontSize: 14 }}
+              onPress={onPressWatch}
             />
             {!hideInfoButton && ( 
               <Button
