@@ -10,7 +10,8 @@ export const styles = StyleSheet.create({
    icon: {
      height: theme.metrics.px(48),
      width: theme.metrics.px(48),
-     paddingTop: theme.metrics.px(10),
+     top: theme.metrics.px(-145),
+     right: theme.metrics.px(140)
    },
 
    container: {

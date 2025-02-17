@@ -37,7 +37,7 @@ export function Search() {
 
       <Input value={query} onChangeText={(text) => setQuery(text)} />
 
-      <GreedList loading={loading} data={results} />
+      <GreedList style={{marginTop: 133}} loading={loading} data={results} />
     </View>
   );
 }

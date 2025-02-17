@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { ImageBackground, Text, TouchableOpacity, View } from "react-native";
+import { ActivityIndicator, ImageBackground, Text, TouchableOpacity, View } from "react-native";
 
 import { styles } from "./styles";
 import { LinearGradient } from "expo-linear-gradient";
@@ -64,6 +64,7 @@ export function Hero({
       (fv) => fv.id === item.id && fv.title === item.title
     );
     setIsFavorite(isInFavorite.length > 0);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -98,6 +99,15 @@ export function Hero({
   function onPressWatch() {
     setSelectedData(item);
     navigation.navigate("WatchScreen", { filmId: item.id });
+  }
+
+  
+  if (loading) {
+    return (
+      <View style={{flex: 1,alignItems: "center", justifyContent: "center", backgroundColor: theme.colors.dark}}>
+        <ActivityIndicator size="large" color="#E60C0D" />
+      </View>
+    );
   }
 
   return (

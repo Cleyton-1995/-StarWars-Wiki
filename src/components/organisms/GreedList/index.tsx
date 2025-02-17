@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList, Image, Text, View } from "react-native";
+import { FlatList, Image, StyleProp, Text, TextStyle, View } from "react-native";
 
 import { styles } from "./styles";
 import { Container } from "../../atoms/Container";
@@ -16,8 +16,9 @@ interface HomeListProps {
   type?: string;
   loading?: boolean;
   data?: { id: number; image_url: string }[];
+    style?: StyleProp<TextStyle>;
 }
-export function GreedList({ data, type, loading  }: HomeListProps) {
+export function GreedList({ data, type, loading, style  }: HomeListProps) {
   return (
     <FlatList
       numColumns={3}
@@ -28,7 +29,7 @@ export function GreedList({ data, type, loading  }: HomeListProps) {
       keyExtractor={(item) => item.id.toString()}
       contentContainerStyle={styles.contentContainer}
       ListEmptyComponent={() => (
-        <View style={styles.selo} >
+        <View style={[styles.selo, style]} >
           <Image
             source={Selo}
             style={styles.image}
