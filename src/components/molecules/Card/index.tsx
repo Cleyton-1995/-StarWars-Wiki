@@ -3,7 +3,6 @@ import { Image, ImageStyle, StyleProp, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
 import { useNavigation } from "@react-navigation/native";
 import { useDataStorage } from "../../../services/storage/dataStorage";
-import WebView from "react-native-webview";
 
 interface CardProps {
   item: {

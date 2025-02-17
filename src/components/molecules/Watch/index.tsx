@@ -1,16 +1,10 @@
 import React from "react";
 import {
-  Image,
   ImageStyle,
   StyleProp,
   Text,
-  TouchableOpacity,
   View,
 } from "react-native";
-import { styles } from "./styles";
-import { useNavigation } from "@react-navigation/native";
-import { useDataStorage } from "../../../services/storage/dataStorage";
-import WebView from "react-native-webview";
 import YoutubeIframe from "react-native-youtube-iframe";
 
 interface CardProps {

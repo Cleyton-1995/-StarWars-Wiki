@@ -2,7 +2,6 @@ import React from "react";
 import { FlatList, Image, StyleProp, Text, TextStyle, View } from "react-native";
 
 import { styles } from "./styles";
-import { Container } from "../../atoms/Container";
 import { Card } from "../../molecules/Card";
 
 import Selo from "../../../assets/selo9.png";

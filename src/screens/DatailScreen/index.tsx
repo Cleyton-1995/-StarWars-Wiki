@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { ScrollView, Text } from "react-native";
 
 import { styles } from "./styles";
@@ -11,7 +11,7 @@ export function DatailScreen() {
   const isCharacter = selectedData.type?.toLowerCase() === "personagem";
 
   const descriptionMarginTop = isCharacter
-    ? theme.metrics.px(-50) // Para personagens
+    ? theme.metrics.px(-50)
     : theme.metrics.px(24);
 
   return (

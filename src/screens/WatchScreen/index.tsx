@@ -10,10 +10,10 @@ import { Logo } from "../../components/atoms/Logo";
 export function WatchScreen() {
   const { getFilms } = useGetData();
   const route = useRoute();
-  const { filmId } = route.params; // Pegando o ID do filme selecionado
+  const { filmId } = route.params;
 
   const [film, setFilm] = useState(null);
-  const [loading, setLoading] = useState(true); // Estado de carregamento
+  const [loading, setLoading] = useState(true);
 
   async function callGetData() {
     setLoading(true); // Ativa o carregamento

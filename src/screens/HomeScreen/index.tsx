@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ActivityIndicator, ScrollView, View } from "react-native";
+import { ActivityIndicator, ScrollView, StatusBar, View } from "react-native";
 
 import { styles } from "./styles";
 import { HomeList } from "../../components/organisms/HomeList";
@@ -30,7 +30,14 @@ export function HomeScreen() {
 
   if (loading) {
     return (
-      <View style={{flex: 1,alignItems: "center", justifyContent: "center", backgroundColor: theme.colors.dark}}>
+      <View
+        style={{
+          flex: 1,
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: theme.colors.dark,
+        }}
+      >
         <ActivityIndicator size="large" color="#E60C0D" />
       </View>
     );
@@ -41,6 +48,11 @@ export function HomeScreen() {
       <Hero item={films[2]} hideInfoButton={false} />
       <HomeList title="Filmes e Séries" data={films} />
       <HomeList title="Personagens" data={personage} />
+
+      <StatusBar
+        barStyle={"light-content"}
+        backgroundColor={theme.colors.dark}
+      />
     </ScrollView>
   );
 }
